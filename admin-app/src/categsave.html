@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>应用名称 | 类别管理</title>
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap-slider/slider.css">
+    <link rel="stylesheet" href="plugins/pace/pace.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap-switch/bootstrap-switch.min.css">
+    <link rel="stylesheet" href="plugins/adminlte/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="plugins/adminlte/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <!--IE兼容性-->
+    <!--[if lt IE 9]>
+    <script src="plugins/html5shiv.min.js"></script>
+    <script src="plugins/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <!--头部-->
+    <header class="main-header">
+        <!--=include header.html -->
+    </header>
+    <!--侧边栏-->
+    <aside class="main-sidebar">
+        <!--=include sidebar.html -->
+    </aside>
+
+    <div class="content-wrapper">
+        <!--导航栏-->
+        <section class="content-header">
+            <!--=include navbar.html -->
+        </section>
+        <!--正文-->
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">请输入</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="categName">类别名称</label>
+                                    <input type="text" class="form-control" id="categName"
+                                           placeholder="例如 苹果专区，注意不要过长"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="categDesc">类别描述</label>
+                                    <input type="text" class="form-control" id="categDesc"
+                                           placeholder="(选填) 例如 苹果公司（Apple Inc. ）是美国的一家高科技公司"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="brandId">品牌ID</label>
+                                    <input type="text" class="form-control" id="brandId" placeholder="选填，对应外部系统系统的品牌ID"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="picName">图片名称</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="picName"
+                                               placeholder="(选填) 在主页下方展示的透明PNG图片"/>
+                                        <span class="input-group-btn"><button type="button" id="uploadbtn"
+                                                                              class="btn btn-primary btn-flat">本地上传</button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="listOrder">列表页顺序</label>
+                                    <input type="text" id="listOrder" placeholder="列表顺序" class="slider form-control"
+                                           data-slider-min="0"
+                                           data-slider-max="100" data-slider-step="1" data-slider-value="50"
+                                           data-slider-id="blue"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="mainOrder">主页顺序
+                                        <small>(当值为0时不在主页展示)</small>
+                                    </label>
+                                    <input type="text" id="mainOrder" placeholder="主页顺序" class="slider form-control"
+                                           data-slider-min="0"
+                                           data-slider-max="100" data-slider-step="1" data-slider-value="0"
+                                           data-slider-id="blue"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box-footer">
+                            <div class="col-md-12">
+                                <input type="checkbox" id="status" data-on-text="生效" data-off-text="失效" checked>
+                                <button id="submitbtn" type="button" class="btn btn-primary pull-right">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </div>
+    <!--页脚-->
+    <footer class="main-footer">
+        <!--=include footer.html -->
+    </footer>
+    <!--模态窗口-->
+    <div class="modal-wrapper">
+        <!--=include modal.html -->
+    </div>
+</div>
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="plugins/fastclick/fastclick.js"></script>
+<script src="plugins/bootstrap-slider/bootstrap-slider.js"></script>
+<script src="plugins/pace/pace.min.js"></script>
+<script src="plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<script src="plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
+<script src="plugins/adminlte/js/app.min.js"></script>
+<script src="js/global.js"></script>
+<script src="js/categsave.js"></script>
+</body>
+</html>

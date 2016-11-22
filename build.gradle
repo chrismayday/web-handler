@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://134.32.32.219:8081/nexus/content/groups/public" } // mavenCentral()  //jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    }
+}
+
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+
+    group = 'com.bluexiii.jwh'
+    version = '1.0-SNAPSHOT'
+//    archivesBaseName = 'woegotv'
+
+
+    repositories {
+        mavenLocal()
+        maven { url "http://134.32.32.219:8081/nexus/content/groups/public" } // mavenCentral()  //jcenter()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: "spring-boot"
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencies {
+        compile 'org.springframework.boot:spring-boot-starter'
+        compile 'org.springframework.boot:spring-boot-configuration-processor'
+        compile 'org.springframework.boot:spring-boot-devtools'
+        testCompile 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    test {
+        exclude 'com/bluexiii/jwh/**'
+    }
+
+    task listJars(description: 'Display all compile jars.') << {
+        configurations.compile.each { File file -> println file.name }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.1'
+}

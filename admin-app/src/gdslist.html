@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>应用名称 | 商品管理</title>
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/pace/pace.min.css">
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="plugins/select2/select2.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap-switch/bootstrap-switch.min.css">
+    <link rel="stylesheet" href="plugins/adminlte/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="plugins/adminlte/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <!--[if lt IE 9]>
+    <script src="plugins/html5shiv.min.js"></script>
+    <script src="plugins/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+    <!--头部-->
+    <header class="main-header">
+        <!--=include header.html -->
+    </header>
+    <!--侧边栏-->
+    <aside class="main-sidebar">
+        <!--=include sidebar.html -->
+    </aside>
+    <div class="content-wrapper">
+        <!--导航栏-->
+        <section class="content-header">
+            <!--=include navbar.html -->
+        </section>
+        <!--正文-->
+        <section class="content">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>筛选类别</label>
+                            <select id="categs" class="form-control select2"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table id="datatable" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>机型名称</th>
+                                    <th>零售价</th>
+                                    <th>提货价</th>
+                                    <th>库存排序</th>
+                                    <th>默认排序</th>
+                                    <th>销量排序</th>
+                                    <th>状态</th>
+                                    <th>编辑</th>
+                                    <th>删除<a class="center-block"></a></th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--页脚-->
+    <footer class="main-footer">
+        <!--=include footer.html -->
+    </footer>
+    <!--模态窗口-->
+    <div class="modal-wrapper">
+        <!--=include modal.html -->
+    </div>
+</div>
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="plugins/fastclick/fastclick.js"></script>
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="plugins/pace/pace.min.js"></script>
+<script src="plugins/select2/select2.full.min.js"></script>
+<script src="plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
+<script src="plugins/adminlte/js/app.min.js"></script>
+<script src="js/global.js"></script>
+<script src="js/gdslist.js"></script>
+</body>
+</html>

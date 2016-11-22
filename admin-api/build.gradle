@@ -1,0 +1,20 @@
+jar.baseName 'woegotv-admin-api'
+
+dependencies {
+    compile project(':repository')
+    compile project(':common')
+    //spring boot
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.springframework.boot:spring-boot-starter-cache'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    //oauth2
+    compile 'org.springframework.security.oauth:spring-security-oauth2:2.0.11.RELEASE'
+    //cache
+    compile 'net.sf.ehcache:ehcache:2.10.2.2.21'
+    //pool
+    compile 'com.alibaba:druid:1.0.23'
+    compile 'com.zaxxer:HikariCP:2.5.0'
+    //swagger-staticdocs
+    testCompile 'io.springfox:springfox-staticdocs:2.6.0'
+}

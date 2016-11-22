@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>应用名称 | 类别管理</title>
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/pace/pace.min.css">
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="plugins/adminlte/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="plugins/adminlte/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <!--[if lt IE 9]>
+    <script src="plugins/html5shiv.min.js"></script>
+    <script src="plugins/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+    <!--头部-->
+    <header class="main-header">
+        <!--=include header.html -->
+    </header>
+    <!--侧边栏-->
+    <aside class="main-sidebar">
+        <!--=include sidebar.html -->
+    </aside>
+
+    <div class="content-wrapper">
+        <!--导航栏-->
+        <section class="content-header">
+            <!--=include navbar.html -->
+        </section>
+        <!--正文-->
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <table id="datatable" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>类别名称</th>
+                                    <th>类别描述</th>
+                                    <th>列表页顺序</th>
+                                    <th>主页顺序</th>
+                                    <th>图片</th>
+                                    <th>编辑</th>
+                                    <th>删除</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--页脚-->
+    <footer class="main-footer">
+        <!--=include footer.html -->
+    </footer>
+    <!--模态窗口-->
+    <div class="modal-wrapper">
+        <!--=include modal.html -->
+    </div>
+</div>
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="plugins/fastclick/fastclick.js"></script>
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="plugins/pace/pace.min.js"></script>
+<script src="plugins/adminlte/js/app.min.js"></script>
+<script src="js/global.js"></script>
+<script src="js/categlist.js"></script>
+</body>
+</html>

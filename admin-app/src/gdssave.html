@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>应用名称 | 类别管理</title>
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/pace/pace.min.css">
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap-slider/slider.css">
+    <link rel="stylesheet" href="plugins/select2/select2.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap-switch/bootstrap-switch.min.css">
+    <link rel="stylesheet" href="plugins/jQuery-File-Upload/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="plugins/adminlte/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="plugins/adminlte/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <!--IE兼容性-->
+    <!--[if lt IE 9]>
+    <script src="plugins/html5shiv.min.js"></script>
+    <script src="plugins/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <!--头部-->
+    <header class="main-header">
+        <!--=include header.html -->
+    </header>
+    <!--侧边栏-->
+    <aside class="main-sidebar">
+        <!--=include sidebar.html -->
+    </aside>
+    <div class="content-wrapper">
+        <!--导航栏-->
+        <section class="content-header">
+            <!--=include navbar.html -->
+        </section>
+        <!--正文-->
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">请输入</h3>
+                        </div>
+                        <div class="box-body">
+
+                            <div class="col-md-12">
+                                <!--<span class="btn btn-success fileinput-button">-->
+                                <!--<i class="glyphicon glyphicon-plus"></i>-->
+                                <!--<span>Select files...</span>-->
+                                <!--<input id="fileupload" type="file" name="files[]" multiple>-->
+                                <!--</span>-->
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="woegoUrl">自动填表</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="woegoUrl"
+                                               placeholder="请复制外部系统网站上的商品URL至此处（接口不稳定，如果失败请重试几次）"/>
+                                        <span class="input-group-btn"><button type="button" id="fillbtn"
+                                                                              class="btn btn-success btn-flat">开始</button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>归属类别</label>
+                                    <select id="categs" class="form-control select2" multiple="multiple"
+                                            data-placeholder="请选择类别，可多选" style="width: 100%;">
+                                        <!--<option value="1">Alabama</option>-->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="gdsName">商品名称</label>
+                                    <input type="text" class="form-control" id="gdsName"
+                                           placeholder="例如 红米Note3，注意不要过长"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="gdsSecName">商品描述</label>
+                                    <input type="text" class="form-control" id="gdsSecName" placeholder="例如 骁龙SOC高性价比"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="gdsId">商品ID</label>
+                                    <input type="text" class="form-control" id="gdsId" placeholder="对应外部系统系统中gdsId"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="skuId">型号ID</label>
+                                    <input type="text" class="form-control" id="skuId" placeholder="对应外部系统系统中skuId"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="catId">类别ID</label>
+                                    <input type="text" class="form-control" id="catId" placeholder="对应外部系统系统中catId"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="shopLocaleCode">区域ID</label>
+                                    <input type="text" class="form-control" id="shopLocaleCode"
+                                           placeholder="对应外部系统系统中shopLocaleCode"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="gdsPrice">零售价</label>
+                                    <input type="text" class="form-control" id="gdsPrice" placeholder="单位为元"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="gdsRealPrice">提货价</label>
+                                    <input type="text" class="form-control" id="gdsRealPrice" placeholder="单位为元"/>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="stockCount">库存排序</label>
+                                    <input type="text" id="stockCount" placeholder="库存排序" class="slider form-control"
+                                           data-slider-min="0" data-slider-max="500" data-slider-step="1"
+                                           data-slider-value="100" data-slider-id="blue"/>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="orderDef">综合排序</label>
+                                    <input type="text" id="orderDef" placeholder="综合排序" class="slider form-control"
+                                           data-slider-min="0" data-slider-max="500" data-slider-step="1"
+                                           data-slider-value="100" data-slider-id="blue"/>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="orderSale">销量排序</label>
+                                    <input type="text" id="orderSale" placeholder="销量排序" class="slider form-control"
+                                           data-slider-min="0" data-slider-max="500" data-slider-step="1"
+                                           data-slider-value="100" data-slider-id="blue"/>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="picLink">图片URL</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="picLink"
+                                               placeholder="请复制外部系统网站上的图片URL至此处，也可以点击按钮手工上传"/>
+                                        <span class="input-group-btn">
+                                        <button type="button" id="uploadbtn"
+                                                class="btn btn-primary btn-flat">
+                                            <span>本地上传</span>
+                                            <input id="fileupload" type="file" name="upload">
+                                        </button>
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div id="progress" class="progress progress-sm active">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="detailLink">详情URL</label>
+                                    <input type="text" class="form-control" id="detailLink" placeholder="(可选)"/>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="detailHtml">详情
+                                        <small>(本地图片可拖放上传)</small>
+                                    </label>
+                                    <textarea class="textarea" id="detailHtml" placeholder="请录入详情" rows="80"></textarea>
+                                    <!--<div class="textarea" id="detailHtml"></div>-->
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="specLink">规格URL</label>
+                                    <input type="text" class="form-control" id="specLink" placeholder="(可选)"/>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="specHtml">规格</label>
+                                    <textarea class="textarea" id="specHtml" placeholder="请录入详情" rows="80"></textarea>
+                                    <!--<div class="textarea" id="specHtml"></div>-->
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="box-footer">
+                            <div class="col-md-12">
+                                <input type="hidden" id="gdsDetailId">
+                                <input type="hidden" id="gdsPicId">
+                                <input type="checkbox" id="status" data-on-text="生效" data-off-text="失效" checked>
+                                <button id="submitbtn" type="button" class="btn btn-primary pull-right">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--页脚-->
+    <footer class="main-footer">
+        <!--=include footer.html -->
+    </footer>
+    <!--模态窗口-->
+    <div class="modal-wrapper">
+        <!--=include modal.html -->
+    </div>
+</div>
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="plugins/fastclick/fastclick.js"></script>
+<script src="plugins/bootstrap-slider/bootstrap-slider.js"></script>
+<script src="plugins/pace/pace.min.js"></script>
+<script src="plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<script src="plugins/ckeditor/ckeditor.js"></script>
+<script src="plugins/select2/select2.full.min.js"></script>
+<script src="plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
+<script src="plugins/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="plugins/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+<script src="plugins/adminlte/js/app.min.js"></script>
+<script src="js/global.js"></script>
+<script src="js/gdssave.js"></script>
+</body>
+</html>

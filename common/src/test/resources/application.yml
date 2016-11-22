@@ -1,0 +1,48 @@
+spring.profiles.active: h2
+#spring.profiles.active: mysql
+
+logging.level:
+  root: INFO
+  org.hibernate: INFO
+  org.hibernate.jpa.internal.util.LogHelper: DEBUG
+  org.springframework: INFO
+spring.jpa.properties.hibernate:
+  dialect: org.hibernate.dialect.MySQLDialect
+  show_sql: true
+  format_sql: true
+debug: false
+config:
+  app-base-url:
+  pic-base-url:
+  api-url:
+  appkey:
+  secret:
+  session:
+
+---
+
+spring:
+  profiles: h2
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    platform: h2
+  jpa.properties.hibernate:
+    dialect: org.hibernate.dialect.H2Dialect
+    hbm2ddl.import_files: /scripts/import.sql
+  jpa.hibernate.ddl-auto: create-drop  #JPA初始化
+
+---
+
+spring:
+  profiles: mysql
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/woegotvdev?zeroDateTimeBehavior=convertToNull&characterEncoding=UTF8
+    username:
+    password:
+    platform: mysql
+  jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQLDialect
+  jpa.hibernate.ddl-auto: none  #只在初始化MySQL时放开

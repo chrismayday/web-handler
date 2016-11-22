@@ -1,0 +1,127 @@
+spring.profiles.active: dev,druid,security
+
+---
+
+#默认
+spring.cache.type: none
+security.basic.enabled: false
+multipart.maxFileSize: 3Mb
+config:
+  pic-base-url: /res/images
+  api-url:
+  appkey:
+  secret:
+  session:
+
+---
+
+#开发环境
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/woegotvdev?zeroDateTimeBehavior=convertToNull&amp;characterEncoding=UTF8
+    username:
+    password:
+  jpa.properties.hibernate:
+    dialect: org.hibernate.dialect.MySQLDialect
+    show_sql: true
+    format_sql: true
+    hbm2ddl.ddl-auto: none
+debug: false
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    # org.hibernate.type: TRACE
+    org.springframework: INFO
+    net.sf.ehcache: INFO
+    org.thymeleaf.TemplateEngine: INFO
+server:
+  port: 30022
+  contextPath: /api
+config:
+  pic-base-path: /Users/foo/bar/resources/images
+
+---
+
+#测试环境
+spring:
+  profiles: tst
+
+---
+
+#生产环境
+
+spring:
+  profiles: prd
+
+---
+
+#多数据源配置
+spring:
+  profiles: multids
+  datasource-primary:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://IP:PORT/primary?zeroDateTimeBehavior=convertToNull&amp;characterEncoding=UTF8
+    username:
+    password:
+  datasource-secondary:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://IP:PORT/secondary?zeroDateTimeBehavior=convertToNull&amp;characterEncoding=UTF8
+    username:
+    password:
+  jpa.properties.hibernate:
+    dialect: org.hibernate.dialect.MySQLDialect
+    show_sql: true
+    format_sql: true
+    hbm2ddl.ddl-auto: none
+  h2:
+    console.enabled: true
+    console.path: /h2-console
+debug: true
+
+---
+
+#启用HTTPS
+spring.profiles: ssl
+server.ssl:
+  key-store: keystore.jks
+  key-store-password:
+  key-password:
+
+---
+
+#启用SpringSecurity及Spring Oauth2
+spring.profiles: security
+security.basic.enabled: true
+
+---
+
+#启用缓存
+spring.profiles: cache
+
+---
+
+#启用跨域
+spring.profiles: cors
+
+---
+
+#启用Druid数据源
+spring.profiles: druid
+
+---
+
+#启用HikariCP数据源
+spring.profiles: hikari
+spring.datasource.type: com.zaxxer.hikari.HikariDataSource
+
+---
+
+#配合NG实现HTTPS（如果已有spring security则不需此配置）
+spring.profiles: ngssl
+server:
+  use-forward-headers: true
+  tomcat:
+    protocol_header: x-forwarded-proto

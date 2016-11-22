@@ -1,0 +1,24 @@
+bootRepackage.enabled = false
+jar.baseName 'woegotv-repository'
+
+dependencies {
+    //spring boot
+    compile ('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile 'org.springframework.boot:spring-boot-starter-jdbc'
+    //jackson
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.1'
+    //hibernate validator
+    compile 'javax.validation:validation-api:1.1.0.Final'
+    compile 'org.hibernate:hibernate-validator:5.2.4.Final'
+    compile 'org.hibernate:hibernate-validator-cdi:5.2.4.Final'
+    compile 'javax.el:javax.el-api:2.2.4'
+    compile 'org.glassfish.web:javax.el:2.2.4'
+    //swagger
+    compile 'io.springfox:springfox-swagger2:2.6.0'
+    compile 'io.springfox:springfox-swagger-ui:2.6.0'
+    //jdbc driver
+    runtime 'mysql:mysql-connector-java:5.1.36'
+    runtime 'com.h2database:h2:1.4.192'
+    //test
+    testCompile 'org.springframework.security:spring-security-core:4.1.1.RELEASE'
+}
